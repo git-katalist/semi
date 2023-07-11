@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <ul class="sidebar">
+        <li onclick="hideSidebar()">
+          <a href="#"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              viewBox="0 -960 960 960"
+              width="24"
+            >
+              <path
+                d="m258.423-218.693-38.922-39.73L440.27-480 219.501-701.577l38.922-39.73L480-519.73l221.577-221.577 38.922 39.73L519.73-480l220.769 221.577-38.922 39.73L480-440.27 258.423-218.693Z"
+              />
+            </svg>
+          </a>
+        </li>
+        <li><a class="nav-link" href="/index.html">Home</a></li>
+        <li><a class="nav-link" href="/about.html">About</a></li>
+        <li><a class="nav-link" href="#">Blog</a></li>
+        <li><a class="nav-link" href="#">Careers</a></li>
+        <li><a class="nav-link" href="#">Contact</a></li>
+      </ul>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li class="hideOnMobile"><a href="/about.html">About</a></li>
+        <li class="hideOnMobile"><a href="#">Blog</a></li>
+        <li class="hideOnMobile"><a href="#">Careers</a></li>
+        <li class="hideOnMobile"><a href="#">Contact</a></li>
+        <li class="menuButton" onclick="showSidebar()">
+          <a href="#">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              viewBox="0 -960 960 960"
+              width="24"
+            >
+              <path
+                d="M136.462-259.463v-55.96h687.884v55.96H136.462Zm0-192.961v-55.96h687.884v55.96H136.462Zm0-192.153v-55.96h687.884v55.96H136.462Z"
+              />
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <script>
+      const sidebar = document.querySelector(".sidebar");
+      function showSidebar() {
+        // sidebar.style.display = "flex";
+        sidebar.classList.toggle("active");
+      }
+      function hideSidebar() {
+        sidebar.classList.toggle("active");
+      }
+
+      document.querySelectorAll(".nav-link").forEach((n) =>
+        n.addEventListener("click", () => {
+          sidebar.classList.remove("active");
+        })
+      );
+    </script>
+  </body>
+</html>
